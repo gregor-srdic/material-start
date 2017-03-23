@@ -7,6 +7,7 @@ import 'angular-material';
 
 import AppController from 'src/AppController';
 import Users from 'src/users/Users';
+import AccordionDirective from 'src/directives/accordion';
 
 export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
   .config(($mdIconProvider, $mdThemingProvider) => {
@@ -18,10 +19,12 @@ export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
       .icon("google_plus", "./assets/svg/google_plus.svg", 24)
       .icon("hangouts", "./assets/svg/hangouts.svg", 24)
       .icon("twitter", "./assets/svg/twitter.svg", 24)
-      .icon("phone", "./assets/svg/phone.svg", 24);
+      .icon("phone", "./assets/svg/phone.svg", 24)
+      .icon("arrow_down", "./assets/svg/arrow_down.svg", 24);
 
     $mdThemingProvider.theme('default')
       .primaryPalette('brown')
       .accentPalette('red');
   })
+  .directive('mdAccordion', AccordionDirective)
   .controller('AppController', AppController);

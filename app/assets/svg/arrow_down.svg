@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="12px" viewBox="0 0 25 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons-catalog" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Clausius-ikone" transform="translate(-631.000000, -1929.000000)" fill-rule="nonzero" fill="#202529">
+            <path d="M646.754231,1946.41671 C647.2961,1947.08965 648.280891,1947.19589 648.953824,1946.65402 C649.626757,1946.11216 649.733005,1945.12736 649.191136,1944.45443 L641.578096,1935 L649.191136,1925.54557 C649.733005,1924.87264 649.626757,1923.88784 648.953824,1923.34598 C648.280891,1922.80411 647.2961,1922.91035 646.754231,1923.58329 L638.452495,1933.89299 C638.152911,1934.19491 637.998611,1934.5961 638.000009,1935 C637.998611,1935.4039 638.152911,1935.80509 638.452495,1936.10701 L646.754231,1946.41671 Z" id="arrow-down" transform="translate(643.768556, 1935.000000) scale(-1, -1) rotate(-270.000000) translate(-643.768556, -1935.000000) "></path>
+        </g>
+    </g>
+</svg>
