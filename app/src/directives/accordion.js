@@ -47,7 +47,7 @@ function AccordionDirective($animateCss, $timeout) {
             }
             scope.open = scope.mdAccordion !== true;
             scope.toggleOpen();
-            element.on('mousedown', scope.toggleOpen);
+            element.find('md-card-header').on('mousedown', scope.toggleOpen);
         },
         scope: {
             mdAccordion: '='
