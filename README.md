@@ -1,9 +1,9 @@
 # Accordion
 [Live example](http://pepa.azurewebsites.net/app/)
 
-source: *app/src/directives/accordion.js*  
+[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/directives/accordion.js)
 
-usage: *app/src/users/components/UserDetails.html* 
+[Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/users/components/details/UserDetails.html)
 
 ```
 <md-card md-accordion="true">
