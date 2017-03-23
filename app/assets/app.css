@@ -136,6 +136,8 @@ span.name {
 md-card.md-accordion {
   position:relative;
   overflow: hidden;
+  margin-left:0;
+  margin-right:0;
 }
 
 md-card.md-accordion md-card-header {

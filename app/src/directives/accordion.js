@@ -17,12 +17,14 @@ function AccordionDirective($animateCss, $timeout) {
                     })
                         .start()
                         .then(() => scope.accordionContent.css({ maxHeight: '' }));
-                    $animateCss(scope.expandIcon, {
-                        from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
-                        to: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
-                        duration: animationDuration
-                    })
-                        .start()
+                    if (scope.expandIcon && scope.expandIcon.length > 0) {
+                        $animateCss(scope.expandIcon, {
+                            from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                            to: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                            duration: animationDuration
+                        })
+                            .start()
+                    }
                 }
                 else {
                     $animateCss(scope.accordionContent, {
@@ -32,19 +34,24 @@ function AccordionDirective($animateCss, $timeout) {
                     })
                         .start()
                         .then(() => scope.accordionContent.css({ position: 'absolute', maxHeight: '' }));
-                    $animateCss(scope.expandIcon, {
-                        from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
-                        to: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
-                        duration: animationDuration
-                    })
-                        .start()
+                    if (scope.expandIcon && scope.expandIcon.length > 0) {
+                        $animateCss(scope.expandIcon, {
+                            from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                            to: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                            duration: animationDuration
+                        })
+                            .start()
+                    }
                 }
 
             }
+            scope.open = scope.mdAccordion !== true;
             scope.toggleOpen();
             element.on('mousedown', scope.toggleOpen);
         },
-        scope: {}
+        scope: {
+            mdAccordion: '='
+        }
     };
 }
 export default ['$animateCss', '$timeout', AccordionDirective];

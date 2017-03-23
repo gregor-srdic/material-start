@@ -1,7 +1,14 @@
+# Accordion
+[Live example](http://pepa.azurewebsites.net/app/)
+source: app/src/directives/accordion.js
+´´´
+
+´´´
+
+
 # Running the application
 Clone this repository and execute the following commands in a terminal:
 
-* `git checkout es6`
 * `npm install jspm live-server -g`
 * `jspm update`
 * `live-server --open=app`
