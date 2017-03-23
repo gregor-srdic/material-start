@@ -1,4 +1,4 @@
-function AccordionDirective($animateCss, $timeout) {
+function AccordionDirective($animateCss) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -54,4 +54,4 @@ function AccordionDirective($animateCss, $timeout) {
         }
     };
 }
-export default ['$animateCss', '$timeout', AccordionDirective];
+export default ['$animateCss', AccordionDirective];

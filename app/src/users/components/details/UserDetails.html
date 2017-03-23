@@ -5,7 +5,7 @@
 <md-card md-accordion="true">
   <md-card-header md-ink-ripple>
     <md-card-header-text>
-      <span class="md-title">Accordion header</span>
+      <span class="md-title">Accordion directive</span>
     </md-card-header-text>
     <md-icon class="expand-icon" md-svg-icon="arrow_down"></md-icon>
   </md-card-header>
@@ -26,6 +26,11 @@
     </div>
   </md-card-content>
 </md-card>
+
+<md-accordion header="Accordion component" is-open="false">
+  <p>This is content</p>
+  <p>And this is content also</p>
+</md-accordion>
 
 <p>{{$ctrl.selected.content}}</p>
 
