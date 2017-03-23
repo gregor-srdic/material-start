@@ -1,10 +1,11 @@
 # Accordion
-[Live example](http://pepa.azurewebsites.net/app/)  
+[Live example](http://pepa.azurewebsites.net/app/)
+
 source: *app/src/directives/accordion.js*  
 
 usage: *app/src/users/components/UserDetails.html* 
-   
-´´´
+
+```
 <md-card md-accordion="true">
   <md-card-header>
     <md-card-header-text><span class="md-title">Accordion header</span></md-card-header-text>
@@ -14,7 +15,7 @@ usage: *app/src/users/components/UserDetails.html*
     Accordion content
   </md-card-content>
 </md-card>
-´´´
+```
 
 
 # Running the application
