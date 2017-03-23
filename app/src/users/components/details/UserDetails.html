@@ -2,7 +2,8 @@
 <h2>{{$ctrl.selected.name}}</h2>
 <p>{{$ctrl.selected.content}}</p>
 
-<md-card md-accordion="true">
+<h1>Accordion directive</h1>
+<md-card md-accordion="false">
   <md-card-header md-ink-ripple>
     <md-card-header-text>
       <span class="md-title">Accordion directive</span>
@@ -27,13 +28,26 @@
   </md-card-content>
 </md-card>
 
-<md-accordion header="Accordion component" is-open="false">
+<h1>Accordion component</h1>
+<md-accordion header="Accordion component 1" is-open="false">
   <p>This is content</p>
   <p>And this is content also</p>
   <p>{{$ctrl.selected.content}}</p>
 </md-accordion>
 
-<p>{{$ctrl.selected.content}}</p>
+<h1>Accordion component group</h1>
+<md-accordion-group>
+  <md-accordion header="Accordion component 1" is-open="true">
+    <p>This is content</p>
+    <p>And this is content also</p>
+    <p>{{$ctrl.selected.content}}</p>
+  </md-accordion>
+  <md-accordion header="Accordion component 2" is-open="false">
+    <p>This is content</p>
+    <p>And this is content also</p>
+    <p>{{$ctrl.selected.content}}</p>
+  </md-accordion>
+</md-accordion-group>
 
 <md-button class="md-fab md-fab-bottom-right" ng-click="$ctrl.share($event)" aria-label="Share">
   <md-icon md-svg-icon="share"></md-icon>

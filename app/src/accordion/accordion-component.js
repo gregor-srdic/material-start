@@ -1,12 +1,19 @@
+import { createGuid } from 'src/utils.js';
+
 export default {
-  name : 'mdAccordion',
-  config : {
+  name: 'mdAccordion',
+  config: {
     transclude: true,
-    bindings: { header: '@', isOpen: '@' },
+    bindings: { header: '@', isOpen: '<' },
     controller: function ($scope, $element, $animateCss) {
+      this.componentId = createGuid();
       $scope.animationDuration = 0.3;
+      $scope.open = this.isOpen !== true;
       this.$onInit = () => {
-        $scope.open = this.isOpen;
+        $scope.$on('CLOSE_ACCORDION', (event, title, description) => {
+          if($scope.open && title != this.componentId)
+            $scope.toggleOpen();
+        });
         $scope.accordionContent = $element.find('md-card-content');
         $scope.expandIcon = $element.find('md-card-header').find('md-icon');
         $scope.toggleOpen = () => {
@@ -47,7 +54,12 @@ export default {
             }
           }
         };
-        $element.find('md-card-header').on('mousedown', $scope.toggleOpen);
+        $element.find('md-card-header').on('mousedown', ()=>{          
+          if (!$scope.open)
+            $scope.$emit('ACCORDION_OPENED', this.componentId, '');
+          $scope.toggleOpen();
+        });
+        $scope.toggleOpen();
       }
     },
     templateUrl: 'src/accordion/accordion-component.html'

@@ -9,6 +9,7 @@ import AppController from 'src/AppController';
 import Users from 'src/users/Users';
 import AccordionDirective from 'src/accordion/accordion-directive';
 import AccordionComponent from 'src/accordion/accordion-component';
+import AccordionGroupComponent from 'src/accordion/accordion-group-component';
 
 export default angular.module('starter-app', ['ngMaterial', Users.name])
   .config(($mdIconProvider, $mdThemingProvider) => {
@@ -28,5 +29,6 @@ export default angular.module('starter-app', ['ngMaterial', Users.name])
       .accentPalette('red');
   })
   .directive('mdAccordion', AccordionDirective)
+  .component(AccordionGroupComponent.name,AccordionGroupComponent.config)
   .component(AccordionComponent.name,AccordionComponent.config)
   .controller('AppController', AppController);
