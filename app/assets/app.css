@@ -139,12 +139,19 @@ md-card.md-accordion {
 }
 
 md-card.md-accordion md-card-header {
-  background: #FFF;
+  background: rgb(16,108,200);
+  color:#FFF;
   z-index: 2;
   cursor: pointer;
+}
+md-card.md-accordion md-card-header:hover {
+  background-color: rgb(1,89,162);
 }
 md-card.md-accordion md-card-content  {
   box-sizing:border-box;
   padding-bottom:0;
   padding-top:0;
+}
+#Clausius-ikone {
+  fill:#FFF;
 }
