@@ -7,6 +7,7 @@ import 'angular-material';
 
 import AppController from 'src/AppController';
 import Users from 'src/users/Users';
+import AccordionDirective from 'src/directives/accordion';
 
 export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
   .config(($mdIconProvider, $mdThemingProvider) => {
@@ -24,4 +25,5 @@ export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
       .primaryPalette('brown')
       .accentPalette('red');
   })
+  .directive('mdAccordion', AccordionDirective)
   .controller('AppController', AppController);
