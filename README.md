@@ -1,7 +1,46 @@
 # Accordion
+
 [Live example](http://pepa.azurewebsites.net/app/)
 
-[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/directives/accordion.js)
+## Accordion Component
+
+###Single accordion element, implemented with a md-accordion component. Header text is passed in with header attribute. Initial state can be set througt true/false value of is-open attribute.
+
+[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/accordion/accordion-group-component.js)
+
+[Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/users/components/details/UserDetails.html)
+
+```
+<md-accordion header="Accordion component 1" is-open="false">
+  <p>This is content</p>
+  <p>And this is content also</p>
+  <p>{{$ctrl.selected.content}}</p>
+</md-accordion>
+```
+
+## Accordion Component Group
+
+###Component combining multiple accordion components. Opening one of the accordions closes other any other open accordion in the group. 
+
+```
+<md-accordion-group>
+  <md-accordion>
+   ...
+  </md-accordion>
+  <md-accordion>
+   ...
+  </md-accordion>
+  ...
+</md-accordion-group>
+```
+
+## Accordion directive
+
+###Single accordion element, implemented as md-accordion added to md-card. Initial state can be set througt true/false value of md-accordion attribute.
+
+[Live example](http://pepa.azurewebsites.net/app/)
+
+[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/accordion/accordion-directive.js)
 
 [Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/users/components/details/UserDetails.html)
 
