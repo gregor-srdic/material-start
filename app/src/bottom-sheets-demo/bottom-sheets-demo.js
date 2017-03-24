@@ -16,7 +16,22 @@ export default {
               { name: 'Share', icon: 'share-arrow' },
               { name: 'Upload', icon: 'upload' },
               { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' }
+              { name: 'Print this page', icon: 'print' },
+              { name: 'Upload', icon: 'upload' },
+              { name: 'Copy', icon: 'copy' },
+              { name: 'Print this page', icon: 'print' },
+              { name: 'Upload', icon: 'upload' },
+              { name: 'Copy', icon: 'copy' },
+              { name: 'Print this page', icon: 'print' },
+              { name: 'Upload', icon: 'upload' },
+              { name: 'Copy', icon: 'copy' },
+              { name: 'Print this page', icon: 'print' },
+              { name: 'Upload', icon: 'upload' },
+              { name: 'Copy', icon: 'copy' },
+              { name: 'Print this page', icon: 'print' },
+              { name: 'Upload', icon: 'upload' },
+              { name: 'Copy', icon: 'copy' },
+              { name: 'Last item', icon: 'print' }
             ];
           }
         }).then(function (clickedItem) {

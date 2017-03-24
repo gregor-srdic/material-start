@@ -158,3 +158,10 @@ md-card.md-accordion md-card-content  {
 #Clausius-ikone {
   fill:#FFF;
 }
+
+/* bottom sheet */
+md-bottom-sheet {
+  max-height:50%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
