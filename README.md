@@ -4,7 +4,7 @@
 
 ## Accordion Component
 
-###Single accordion element, implemented with a md-accordion component. Header text is passed in with header attribute. Initial state can be set througt true/false value of is-open attribute.
+*Single accordion element, implemented with a md-accordion component. Header text is passed in with header attribute. Initial state can be set througt true/false value of is-open attribute.*
 
 [Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/accordion/accordion-group-component.js)
 
@@ -20,7 +20,7 @@
 
 ## Accordion Component Group
 
-###Component combining multiple accordion components. Opening one of the accordions closes other any other open accordion in the group. 
+*Component combining multiple accordion components. Opening one of the accordions closes other any other open accordion in the group.*
 
 ```
 <md-accordion-group>
@@ -36,7 +36,7 @@
 
 ## Accordion directive
 
-###Single accordion element, implemented as md-accordion added to md-card. Initial state can be set througt true/false value of md-accordion attribute.
+*Single accordion element, implemented as md-accordion added to md-card. Initial state can be set througt true/false value of md-accordion attribute.*
 
 [Live example](http://pepa.azurewebsites.net/app/)
 
