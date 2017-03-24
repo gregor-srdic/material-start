@@ -1,8 +1,8 @@
 # Accordion
 
-[Live example](http://pepa.azurewebsites.net/app/)
+[Live example](http://pepa.azurewebsites.net/app/?q=accordion)
 
-[Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/users/components/details/UserDetails.html)
+[Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/accordion-demo/accordion-demo.html)
 
 ## Accordion Component
 

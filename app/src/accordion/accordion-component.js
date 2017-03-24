@@ -11,21 +11,21 @@ export default {
       $scope.open = this.isOpen !== true;
       this.$onInit = () => {
         $scope.$on('CLOSE_ACCORDION', (event, title, description) => {
-          if($scope.open && title != this.componentId)
-            $scope.toggleOpen();
+          if ($scope.open && title != this.componentId)
+            $scope.toggleOpen(false);
         });
         $scope.accordionContent = $element.find('md-card-content');
         $scope.expandIcon = $element.find('md-card-header').find('md-icon');
-        $scope.toggleOpen = () => {
+        $scope.toggleOpen = (skipAnimation) => {
           $scope.open = !$scope.open;
-          animateAccordionToggle($animateCss, $scope.open, $scope.accordionContent, $scope.expandIcon, $scope.animationDuration);
+          animateAccordionToggle($animateCss, $scope.open, $scope.accordionContent, $scope.expandIcon, skipAnimation ? 0 : $scope.animationDuration);
         };
-        $element.find('md-card-header').on('mousedown', ()=>{          
+        $element.find('md-card-header').on('mousedown', () => {
           if (!$scope.open)
             $scope.$emit('ACCORDION_OPENED', this.componentId, '');
-          $scope.toggleOpen();
+          $scope.toggleOpen(false);
         });
-        $scope.toggleOpen();
+        $scope.toggleOpen(true);
       }
     },
     templateUrl: 'src/accordion/accordion-component.html'

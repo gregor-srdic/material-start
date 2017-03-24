@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <title>Angular Material - Starter App</title>
+  <title>Nomnio</title>
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
   <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css"/>
   <link rel="stylesheet" href="./assets/app.css"/>
@@ -20,7 +20,7 @@
                aria-label="Show User List">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
-    <h1>Angular Material - Starter App</h1>
+    <h1>Nomnio d.o.o. demo</h1>
   </md-toolbar>
 
   <!-- Container #2 -->
@@ -29,20 +29,26 @@
     <!-- Container #3 -->
     <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                 md-component-id="left" ng-click="app.toggleList()">
-      <!-- Custom UsersList component -->
-      <users-list
-          users="app.users"
-          selected="app.selected"
-          on-selected="app.selectUser(user)">
-      </users-list>
+
+      <md-list>
+        <md-list-item>
+          <md-button ng-class="{'selected' : 'accordion' === app.selected }" ng-click="app.selectView('accordion')">
+            Accordion
+          </md-button>
+        </md-list-item>
+        <md-list-item>
+          <md-button ng-class="{'selected' : 'bottom_sheets' === app.selected }" ng-click="app.selectView('bottom_sheets')">
+             Bottom sheets 
+          </md-button>
+        </md-list-item>
+      </md-list>
+
     </md-sidenav>
 
     <!-- Container #4 -->
     <md-content flex id="content">
-      <!-- Custom UserDetails component -->
-      <user-details
-          selected="app.selected" >
-      </user-details>
+      <accordion-demo ng-if="app.selected=='accordion'"></accordion-demo>
+      <bottom-sheets-demo ng-if="app.selected=='bottom_sheets'">Bottom sheets</bottom-sheets-demo>
     </md-content>
 
   </div>

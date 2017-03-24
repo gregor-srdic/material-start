@@ -1,25 +1,14 @@
 /**
  * Main App Controller for the Angular Material Starter App
- * @param UsersDataService
  * @param $mdSidenav
  * @constructor
  */
-function AppController(UsersDataService, $mdSidenav) {
+function AppController($mdSidenav) {
   var self = this;
 
-  self.selected     = null;
-  self.users        = [ ];
-  self.selectUser   = selectUser;
-  self.toggleList   = toggleUsersList;
-
-  // Load all registered users
-
-  UsersDataService
-        .loadAllUsers()
-        .then( function( users ) {
-          self.users    = [].concat(users);
-          self.selected = users[0];
-        });
+  self.selected     = window.location.search && window.location.search.indexOf('bottom') > -1 ? 'bottom_sheets' : 'accordion';
+  self.selectView   = selectView;
+  self.toggleList   = toggleMenuList;
 
   // *********************************
   // Internal methods
@@ -28,7 +17,7 @@ function AppController(UsersDataService, $mdSidenav) {
   /**
    * Hide or Show the 'left' sideNav area
    */
-  function toggleUsersList() {
+  function toggleMenuList() {
     $mdSidenav('left').toggle();
   }
 
@@ -36,9 +25,10 @@ function AppController(UsersDataService, $mdSidenav) {
    * Select the current avatars
    * @param menuId
    */
-  function selectUser ( user ) {
-    self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+  function selectView ( view ) {
+    //self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+    self.selected = view;
   }
 }
 
-export default [ 'UsersDataService', '$mdSidenav', AppController ];
+export default ['$mdSidenav', AppController ];

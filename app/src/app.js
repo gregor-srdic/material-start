@@ -10,6 +10,8 @@ import Users from 'src/users/Users';
 import AccordionDirective from 'src/accordion/accordion-directive';
 import AccordionComponent from 'src/accordion/accordion-component';
 import AccordionGroupComponent from 'src/accordion/accordion-group-component';
+import AccordionDemo from 'src/accordion-demo/accordion-demo';
+import BootomSheetsDemo from 'src/bottom-sheets-demo/bottom-sheets-demo';
 
 export default angular.module('starter-app', ['ngMaterial', Users.name])
   .config(($mdIconProvider, $mdThemingProvider) => {
@@ -31,4 +33,6 @@ export default angular.module('starter-app', ['ngMaterial', Users.name])
   .directive('mdAccordion', AccordionDirective)
   .component(AccordionGroupComponent.name,AccordionGroupComponent.config)
   .component(AccordionComponent.name,AccordionComponent.config)
+  .component(AccordionDemo.name,AccordionDemo.config)
+  .component(BootomSheetsDemo.name,BootomSheetsDemo.config)
   .controller('AppController', AppController);

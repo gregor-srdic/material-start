@@ -8,13 +8,15 @@ function AccordionDirective($animateCss) {
             element.addClass('md-accordion');
             scope.accordionContent = element.find('md-card-content');
             scope.expandIcon = element.find('md-card-header').find('md-icon');
-            scope.toggleOpen = () => {
+            scope.toggleOpen = (skipAnimation) => {
                 scope.open = !scope.open;
-                animateAccordionToggle($animateCss, scope.open, scope.accordionContent, scope.expandIcon, scope.animationDuration);
+                animateAccordionToggle($animateCss, scope.open, scope.accordionContent, scope.expandIcon, skipAnimation ? 0 : scope.animationDuration);
             }
+            element.find('md-card-header').on('mousedown', () => {
+                scope.toggleOpen(false);
+            });
             scope.open = scope.mdAccordion !== true;
-            scope.toggleOpen();
-            element.find('md-card-header').on('mousedown', scope.toggleOpen);
+            scope.toggleOpen(true);
         },
         scope: {
             mdAccordion: '='
