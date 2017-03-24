@@ -6,14 +6,13 @@ import 'angular-aria';
 import 'angular-material';
 
 import AppController from 'src/AppController';
-import Users from 'src/users/Users';
 import AccordionDirective from 'src/accordion/accordion-directive';
 import AccordionComponent from 'src/accordion/accordion-component';
 import AccordionGroupComponent from 'src/accordion/accordion-group-component';
 import AccordionDemo from 'src/accordion-demo/accordion-demo';
 import BootomSheetsDemo from 'src/bottom-sheets-demo/bottom-sheets-demo';
 
-export default angular.module('starter-app', ['ngMaterial', Users.name])
+export default angular.module('starter-app', ['ngMaterial'])
   .config(($mdIconProvider, $mdThemingProvider) => {
     // Register the user `avatar` icons
     $mdIconProvider
