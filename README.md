@@ -56,6 +56,14 @@
 ```
 
 
+# Bottom sheet
+
+[Live example](http://pepa.azurewebsites.net/app/?q=bottom)
+
+[Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/bottom-sheets-demo/bottom-sheets-demo.html)
+
+
+
 # Running the application
 Clone this repository and execute the following commands in a terminal:
 
