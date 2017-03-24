@@ -1,4 +1,4 @@
-import { createGuid } from 'src/utils.js';
+import { createGuid, animateAccordionToggle } from 'src/utils.js';
 
 export default {
   name: 'mdAccordion',
@@ -18,41 +18,7 @@ export default {
         $scope.expandIcon = $element.find('md-card-header').find('md-icon');
         $scope.toggleOpen = () => {
           $scope.open = !$scope.open;
-          let h = $scope.accordionContent[0].offsetHeight;
-          if ($scope.open) {
-            $animateCss($scope.accordionContent, {
-              from: { maxHeight: '0px', position: 'relative' },
-              to: { maxHeight: `${h}px` },
-              duration: $scope.animationDuration
-            })
-              .start()
-              .then(() => $scope.accordionContent.css({ maxHeight: '' }));
-            if ($scope.expandIcon && $scope.expandIcon.length > 0) {
-              $animateCss($scope.expandIcon, {
-                from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
-                to: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
-                duration: $scope.animationDuration
-              })
-                .start()
-            }
-          }
-          else {
-            $animateCss($scope.accordionContent, {
-              from: { maxHeight: `${h}px` },
-              to: { maxHeight: '0px' },
-              duration: $scope.animationDuration
-            })
-              .start()
-              .then(() => $scope.accordionContent.css({ position: 'absolute', maxHeight: '' }));
-            if ($scope.expandIcon && $scope.expandIcon.length > 0) {
-              $animateCss($scope.expandIcon, {
-                from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
-                to: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
-                duration: $scope.animationDuration
-              })
-                .start()
-            }
-          }
+          animateAccordionToggle($animateCss, $scope.open, $scope.accordionContent, $scope.expandIcon, $scope.animationDuration);
         };
         $element.find('md-card-header').on('mousedown', ()=>{          
           if (!$scope.open)

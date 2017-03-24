@@ -4,3 +4,40 @@ export function createGuid() {
         return v.toString(16);
     });
 }
+export function animateAccordionToggle($animateCss, open, accordionContent, expandIcon, animationDuration) {
+    let h = accordionContent[0].offsetHeight;
+    if (open) {
+        $animateCss(accordionContent, {
+            from: { maxHeight: '0px', position: 'relative' },
+            to: { maxHeight: `${h}px` },
+            duration: animationDuration
+        })
+            .start()
+            .then(() => accordionContent.css({ maxHeight: '' }));
+        if (expandIcon && expandIcon.length > 0) {
+            $animateCss(expandIcon, {
+                from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                to: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                duration: animationDuration
+            })
+                .start()
+        }
+    }
+    else {
+        $animateCss(accordionContent, {
+            from: { maxHeight: `${h}px` },
+            to: { maxHeight: '0px' },
+            duration: animationDuration
+        })
+            .start()
+            .then(() => accordionContent.css({ position: 'absolute', maxHeight: '' }));
+        if (expandIcon && expandIcon.length > 0) {
+            $animateCss(expandIcon, {
+                from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                to: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                duration: animationDuration
+            })
+                .start()
+        }
+    }
+}
