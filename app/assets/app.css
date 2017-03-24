@@ -162,6 +162,9 @@ md-card.md-accordion md-card-content  {
 /* bottom sheet */
 md-bottom-sheet {
   max-height:50%;
-  box-sizing: border-box;
+  padding-left:0;
+  padding-right:0;
+}
+md-bottom-sheet  md-content {
   overflow-y: scroll;
 }

@@ -7,6 +7,7 @@ import 'angular-material';
 
 import AppController from 'src/AppController';
 import AccordionDirective from 'src/accordion/accordion-directive';
+import BottomSheetScrollableDirective from 'src/bottom-sheets/bottom-sheets-scrollable-directive';
 import AccordionComponent from 'src/accordion/accordion-component';
 import AccordionGroupComponent from 'src/accordion/accordion-group-component';
 import AccordionDemo from 'src/accordion-demo/accordion-demo';
@@ -30,8 +31,19 @@ export default angular.module('starter-app', ['ngMaterial'])
       .accentPalette('red');
   })
   .directive('mdAccordion', AccordionDirective)
-  .component(AccordionGroupComponent.name,AccordionGroupComponent.config)
-  .component(AccordionComponent.name,AccordionComponent.config)
-  .component(AccordionDemo.name,AccordionDemo.config)
-  .component(BootomSheetsDemo.name,BootomSheetsDemo.config)
-  .controller('AppController', AppController);
+  .component(AccordionGroupComponent.name, AccordionGroupComponent.config)
+  .component(AccordionComponent.name, AccordionComponent.config)
+  .component(AccordionDemo.name, AccordionDemo.config)
+  .component(BootomSheetsDemo.name, BootomSheetsDemo.config)
+  .controller('AppController', AppController)
+  .directive('bottomSheetsScrollable', BottomSheetScrollableDirective)
+  .directive('stopTouchEvent', function () {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        element.on('touchmove', function (evt) {
+          evt.stopPropagation();
+        });
+      }
+    };
+  });
