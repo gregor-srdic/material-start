@@ -8,7 +8,7 @@ export function animateAccordionToggle($animateCss, open, accordionContent, expa
     let h = accordionContent[0].offsetHeight;
     if (open) {
         $animateCss(accordionContent, {
-            from: { maxHeight: '0px', position: 'relative' },
+            from: { maxHeight: '0px'},
             to: { maxHeight: `${h}px` },
             duration: animationDuration
         })
@@ -22,6 +22,7 @@ export function animateAccordionToggle($animateCss, open, accordionContent, expa
             })
                 .start()
         }
+        accordionContent.css({ position: 'relative'});
     }
     else {
         $animateCss(accordionContent, {
