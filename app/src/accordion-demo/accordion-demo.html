@@ -11,43 +11,28 @@
     <p>And this is content also</p>
   </md-accordion>  
   <md-accordion header="Accordion component 3" is-open="false">
-    <p>This is content</p>
-    <p>And this is content also</p>
-    <p>And this is content also</p>
+    <md-list>
+      <md-list-item ng-repeat="item in accordionItems">
+        <md-button class="md-list-item-content">
+          <md-icon md-svg-src="{{item.icon}}"></md-icon>
+          <span class="md-inline-list-icon-label">{{ item.name }}</span>
+        </md-button>
+      </md-list-item>
+    </md-list>
   </md-accordion>
   <md-accordion header="Accordion component 4" is-open="false">
-    <p>This is content</p>
-    <p>And this is content also</p>
-    <p>And this is content also</p>
+     <md-list>
+      <md-list-item ng-repeat="item in accordionItems">
+        <md-button class="md-list-item-content">
+          <md-icon md-svg-src="{{item.icon}}"></md-icon>
+          <span class="md-inline-list-icon-label">{{ item.name }}</span>
+        </md-button>
+      </md-list-item>
+    </md-list>
   </md-accordion>
 </md-accordion-group>
-<!--
-<h1>Accordion component</h1>
-<md-accordion header="Accordion component 1" is-open="false">
-  <p>This is content</p>
-  <p>And this is content also</p>
-</md-accordion>
 
-<h1>Accordion directive</h1>
-<md-card md-accordion="false">
-  <md-card-header md-ink-ripple>
-    <md-card-header-text>
-      <span class="md-title">Accordion directive</span>
-    </md-card-header-text>
-    <md-icon class="expand-icon" md-svg-icon="arrow_down"></md-icon>
-  </md-card-header>
-  <md-card-content>
-    <div class="accordion-content">
-      <p>
-        Accordion content
-      </p>
-      <p>
-        Accordion content
-      </p>
-      <p>
-        Accordion content
-      </p>
-    </div>
-  </md-card-content>
-</md-card>
--->
+<div>
+  <md-button class="md-raised md-primary"ng-click="addOrRemoveItem(1)">Add item</md-button>
+  <md-button ng-disabled="accordionItems.length<1" class="md-raised md-warn" ng-click="addOrRemoveItem(-1)">Remove <span ng-if="accordionItems.length>0">item {{accordionItems.length-1}}</span></md-button>
+</div>

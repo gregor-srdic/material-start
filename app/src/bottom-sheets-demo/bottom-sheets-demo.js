@@ -26,8 +26,6 @@ export default {
               console.log('$onInit ');
             };
           }
-        }).then(function (clickedItem) {
-          console.log(clickedItem);
         });
       }
     }

@@ -135,30 +135,30 @@ span.name {
 
 /* md-accordion */
 md-card.md-accordion {
-  position:relative;
   overflow: hidden;
   margin-left:0;
   margin-right:0;
+  position:relative;
 }
 
 md-card.md-accordion md-card-header {
+  flex-shrink:0;
   background: rgb(16,108,200);
   color:#FFF;
-  z-index: 2;
   cursor: pointer;
+  overflow: hidden;
+  position:relative;
 }
 md-card.md-accordion md-card-header:hover {
   background-color: rgb(1,89,162);
 }
 md-card.md-accordion md-card-content  {
-  box-sizing:border-box;
   padding-bottom:0;
   padding-top:0;
 }
 #Clausius-ikone {
   fill:#FFF;
 }
-
 /* bottom sheet */
 md-bottom-sheet {
   max-height:50%;

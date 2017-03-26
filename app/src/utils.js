@@ -4,16 +4,19 @@ export function createGuid() {
         return v.toString(16);
     });
 }
-export function animateAccordionToggle($animateCss, open, accordionContent, expandIcon, animationDuration) {
-    let h = accordionContent[0].offsetHeight;
+export function animateAccordionToggle($animateCss, open, accordionCard, accordionCardHeader, accordionCardContent, expandIcon, animationDuration) {
+
+    let accordionCardContentHeight = accordionCardContent[0].offsetHeight,
+        accordionCardContentScrollHeight = accordionCardContent[0].scrollHeight;
+
     if (open) {
-        $animateCss(accordionContent, {
-            from: { maxHeight: '0px'},
-            to: { maxHeight: `${h}px` },
+        $animateCss(accordionCardContent, {
+            from: { maxHeight: '0px' },
+            to: { maxHeight: `${accordionCardContentScrollHeight}px` },
             duration: animationDuration
         })
             .start()
-            .then(() => accordionContent.css({ maxHeight: '' }));
+            .then(() => accordionCardContent.css({ maxHeight: '' }));
         if (expandIcon && expandIcon.length > 0) {
             $animateCss(expandIcon, {
                 from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
@@ -22,16 +25,15 @@ export function animateAccordionToggle($animateCss, open, accordionContent, expa
             })
                 .start()
         }
-        accordionContent.css({ position: 'relative'});
     }
     else {
-        $animateCss(accordionContent, {
-            from: { maxHeight: `${h}px` },
+        accordionCardContent.css({ maxHeight:  `${accordionCardContentHeight}px` });
+        $animateCss(accordionCardContent, {
+            from: { maxHeight: `${accordionCardContentHeight}px` },
             to: { maxHeight: '0px' },
             duration: animationDuration
         })
             .start()
-            .then(() => accordionContent.css({ position: 'absolute', maxHeight: '' }));
         if (expandIcon && expandIcon.length > 0) {
             $animateCss(expandIcon, {
                 from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
@@ -42,3 +44,47 @@ export function animateAccordionToggle($animateCss, open, accordionContent, expa
         }
     }
 }
+/*
+export function animateAccordionToggle($animateCss, open, accordionCard, accordionCardHeader, accordionCardContent, expandIcon, animationDuration) {
+
+    let accordionCardHeight = accordionCard[0].scrollHeight,
+        accordionCardHeaderHeight = accordionCardHeader[0].offsetHeight,
+        accordionCardContentHeight = accordionCardContent[0].scrollHeight;
+
+    console.log(accordionCardHeader[0].offsetHeight,accordionCardHeader[0].scrollHeight);
+
+    if (open) {
+        $animateCss(accordionCard, {
+            from: { maxHeight: `${accordionCardHeaderHeight}px` },
+            to: { maxHeight: `${accordionCardHeaderHeight + accordionCardContentHeight}px` },
+            duration: animationDuration
+        })
+            .start()
+            .then(() => accordionCard.css({ maxHeight: '' }));
+        if (expandIcon && expandIcon.length > 0) {
+            $animateCss(expandIcon, {
+                from: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                to: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                duration: animationDuration
+            })
+                .start()
+        }
+    }
+    else {
+        $animateCss(accordionCard, {
+            from: { maxHeight: `${accordionCardHeaderHeight + accordionCardContentHeight}px` },
+            to: { maxHeight: `${accordionCardHeaderHeight}px` },
+            duration: animationDuration
+        })
+            .start()
+        if (expandIcon && expandIcon.length > 0) {
+            $animateCss(expandIcon, {
+                from: { '-webkit-transform': 'scaleY(-1)', transform: 'scaleY(-1)' },
+                to: { '-webkit-transform': 'scaleY(1)', transform: 'scaleY(1)' },
+                duration: animationDuration
+            })
+                .start()
+        }
+    }
+}
+*/
