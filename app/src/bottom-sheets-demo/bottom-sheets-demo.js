@@ -8,31 +8,23 @@ export default {
     templateUrl: 'src/bottom-sheets-demo/bottom-sheets-demo.html',
     controller: function ($scope, $mdBottomSheet) {
       $scope.showListBottomSheet = () => {
-        console.log('showListBottomSheet');
         $mdBottomSheet.show({
           templateUrl: 'src/bottom-sheets-demo/bottom-sheet-list-template.html',
-          controller: function ($scope, $mdBottomSheet) {
-            $scope.items = [
-              { name: 'Share', icon: 'share-arrow' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Print this page', icon: 'print' },
-              { name: 'Upload', icon: 'upload' },
-              { name: 'Copy', icon: 'copy' },
-              { name: 'Last item', icon: 'print' }
-            ];
+          controller: function ($rootScope, $scope, $mdBottomSheet) {
+            if (!$rootScope.bottomSheetItems) {
+              $rootScope.bottomSheetItems = [];
+              for (let i = 0; i < 10; i++)
+                $rootScope.bottomSheetItems.push({ name: `Item ${i}`, icon: 'arrow_down' });
+            }
+            $scope.addOrRemoveItem = function (i) {
+              if (i > 0)
+                $rootScope.bottomSheetItems.push({ name: `Item ${$rootScope.bottomSheetItems.length}`, icon: 'arrow_down' });
+              else if ($rootScope.bottomSheetItems.length > 0)
+                $rootScope.bottomSheetItems.splice($rootScope.bottomSheetItems.length-1, 1);
+            }
+            this.$onInit = function () {
+              console.log('$onInit ');
+            };
           }
         }).then(function (clickedItem) {
           console.log(clickedItem);

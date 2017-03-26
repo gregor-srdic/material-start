@@ -1,7 +1,11 @@
 <md-bottom-sheet class="md-list md-has-header" bottom-sheets-scrollable>
   <md-content>
     <md-list ng-cloak>
-      <md-list-item ng-repeat="item in items">
+      <md-list-item>
+        <md-button class="md-raised md-primary"ng-click="addOrRemoveItem(1)">Add item</md-button>
+        <md-button ng-disabled="bottomSheetItems.length<1" class="md-raised md-warn" ng-click="addOrRemoveItem(-1)">Remove <span ng-if="bottomSheetItems.length>0">item {{bottomSheetItems.length-1}}</span></md-button>
+      </md-list-item>
+      <md-list-item ng-repeat="item in bottomSheetItems">
         <md-button class="md-list-item-content">
           <md-icon md-svg-src="{{item.icon}}"></md-icon>
           <span class="md-inline-list-icon-label">{{ item.name }}</span>
