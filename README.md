@@ -43,7 +43,7 @@
 
 [Usage example](https://github.com/gregor-srdic/material-start/blob/master/app/src/bottom-sheets-demo/bottom-sheets-demo.html)
 
-[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/accordion/accordion-group-component.js)
+[Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/bottom-sheets/bottom-sheets-scrollable-directive.js)
 
 
 
