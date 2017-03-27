@@ -46,6 +46,16 @@
 [Source](https://github.com/gregor-srdic/material-start/blob/master/app/src/bottom-sheets/bottom-sheets-scrollable-directive.js)
 
 
+```
+<md-bottom-sheet class="md-list md-has-header" bottom-sheets-scrollable>
+  <md-content>
+    <md-list>
+      <md-list-item>...</md-list-item>
+      ...
+    </md-list>
+  </md-content>
+</md-bottom-sheet>
+```
 
 # Running the application
 Clone this repository and execute the following commands in a terminal:
