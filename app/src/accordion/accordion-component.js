@@ -26,7 +26,7 @@ export default {
             }
           )
         };
-        $element.find('md-card-header').on('mousedown', () => {
+        $element.find('md-card-header').on('click', () => {
           if (!$scope.open)
             $scope.$emit('ACCORDION_OPENED', this.componentId, '');
           $scope.toggleOpen(false);

@@ -12,7 +12,7 @@ function AccordionDirective($animateCss) {
                 scope.open = !scope.open;
                 animateAccordionToggle($animateCss, scope.open, scope.accordionContent, scope.expandIcon, skipAnimation ? 0 : scope.animationDuration);
             }
-            element.find('md-card-header').on('mousedown', () => {
+            element.find('md-card-header').on('click', () => {
                 scope.toggleOpen(false);
             });
             scope.open = scope.mdAccordion !== true;

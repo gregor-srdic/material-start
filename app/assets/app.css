@@ -168,3 +168,9 @@ md-bottom-sheet {
 md-bottom-sheet  md-content {
   overflow-y: scroll;
 }
+/* version tag */
+.version-tag {
+  width:100%;
+  text-align: right;
+  font-size:12px;
+}
